@@ -1,0 +1,1429 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe0e9 100%);
+    color: #5a3e4c;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,230,240,0.3)"/></svg>');
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease;
+}
+
+.typing-container {
+    text-align: center;
+    color: white;
+}
+
+.typing-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.heart-loader {
+    display: flex;
+    justify-content: center;
+}
+
+.heart {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: pulse 1.5s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -30px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: 30px;
+}
+
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.1); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(189, 147, 163, 0.3);
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: #ff6b9d;
+    font-size: 2rem;
+    margin-right: 10px;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin-left: 30px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #5a3e4c;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+    color: #ff6b9d;
+}
+
+.nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6b9d;
+    transition: width 0.3s;
+}
+
+.nav ul li a:hover::after,
+.nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="20" cy="20" r="5" fill="rgba(255,107,157,0.2)"/><circle cx="80" cy="40" r="7" fill="rgba(255,107,157,0.2)"/><circle cx="40" cy="80" r="6" fill="rgba(255,107,157,0.2)"/></svg>');
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.hero-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ff6b9d;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.heart-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart-animation i {
+    font-size: 3rem;
+    color: #ff6b9d;
+    text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(189, 147, 163, 0.3);
+}
+
+.feature-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+}
+
+.icon {
+    font-size: 3rem;
+    color: #ff6b9d;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff6b9d, #ff8fab);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 107, 157, 0.4);
+    background: linear-gradient(90deg, #ff8fab, #ff6b9d);
+}
+
+/* Love Letter Section */
+.love-letter {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    border-radius: 20px;
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.love-letter::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C60,5 80,10 85,25 C90,40 80,60 65,65 C50,70 30,60 25,45 C20,30 30,15 50,15 Z" fill="rgba(255,107,157,0.1)"/></svg>');
+    background-size: contain;
+    opacity: 0.3;
+}
+
+.letter-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ff6b9d;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.letter-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    text-align: right;
+    margin-top: 30px;
+    color: #ff6b9d;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+    padding: 30px 0;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    color: white;
+}
+
+.footer-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-content p i {
+    color: #fff;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    5% { transform: scale(1.1); }
+    10% { transform: scale(1); }
+    15% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 10px;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 40px;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: white;
+    color: #ff6b9d;
+    transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.fade-in-delay {
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav ul {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .nav ul li {
+        margin: 0 10px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .love-letter {
+        padding: 30px 20px;
+    }
+    
+    .letter-content h2 {
+        font-size: 2rem;
+    }
+    
+    .typing-text {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .love-letter {
+        padding: 20px 15px;
+    }
+    
+    .letter-content p {
+        font-size: 1rem;
+    }
+    
+    .signature {
+        font-size: 1.5rem;
+    }
+}
+/* Birthday Wishes Section */
+.birthday-wishes {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+    display: none; /* Hidden by default */
+}
+
+.wishes-container h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.wish-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(189, 147, 163, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(189, 147, 163, 0.3);
+}
+
+.wish-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b9d, #ff8fab);
+}
+
+.wish-card i {
+    font-size: 3rem;
+    color: #ff6b9d;
+    margin-bottom: 20px;
+}
+
+.wish-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.wish-card p {
+    font-size: 1.1rem;
+    color: #5a3e4c;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Wishes */
+@media (max-width: 768px) {
+    .birthday-wishes {
+        padding: 20px;
+    }
+    
+    .wishes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .wish-card {
+        padding: 20px;
+    }
+}
+.countdown {
+    display: flex !important;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.countdown-item {
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%) !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    text-align: center !important;
+    min-width: 120px !important;
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border: 2px solid white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.countdown-number {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+    margin-bottom: 5px !important;
+}
+
+.countdown-label {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1.1rem !important;
+    color: white !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+/* Memory Game Specific Styles */
+
+/* Game Section */
+.game-section {
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.game-header h2 {
+    color: #ff6b9d;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.game-header p {
+    font-size: 1.1rem;
+    color: #7a5a64;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(189, 147, 163, 0.2);
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #5a3e4c;
+}
+
+.stat span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff6b9d;
+}
+
+.game-board {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.memory-card {
+    aspect-ratio: 1/1;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    color: white;
+    font-size: 2.5rem;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    color: #ff6b9d;
+    font-size: 2.5rem;
+    transform: rotateY(180deg);
+}
+
+.memory-card.matched .card-back {
+    animation: pulse 1s infinite;
+}
+
+/* Message Overlay */
+.message-overlay, .win-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.message-content, .win-content {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 2px solid #ff6b9d;
+}
+
+.message-content h3, .win-content h2 {
+    color: #ff6b9d;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.win-content p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff6b9d, #ff8fab);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 107, 157, 0.4);
+    background: linear-gradient(90deg, #ff8fab, #ff6b9d);
+}
+
+/* Game Instructions */
+.game-instructions {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.instructions-container h2 {
+    text-align: center;
+    color: #ff6b9d;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+}
+
+.instructions-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.instruction-step {
+    display: flex;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.instruction-step p {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Confetti Effect */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6b9d;
+    top: -10px;
+    animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        top: 100vh;
+        transform: translateX(20px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .message-content, .win-content {
+        padding: 30px 20px;
+    }
+    
+    .instructions-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .game-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .stat span {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .game-header h2 {
+        font-size: 1.6rem;
+    }
+    
+    .message-content h3, .win-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .stat span {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+/* Compliments Page Specific Styles */
+
+/* Hero Section */
+.compliments-hero {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    border-radius: 20px;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+    text-align: center;
+}
+
+.compliments-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><circle cx="20" cy="20" r="5" fill="rgba(255,107,157,0.2)"/><circle cx="80" cy="40" r="7" fill="rgba(255,107,157,0.2)"/><circle cx="40" cy="80" r="6" fill="rgba(255,107,157,0.2)"/></svg>');
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.compliments-hero h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ff6b9d;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.compliments-hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.heart-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+.heart-animation i {
+    font-size: 3rem;
+    color: #ff6b9d;
+    text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+}
+
+/* Compliments Section */
+.compliments-section {
+    margin-bottom: 60px;
+}
+
+.compliments-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.compliments-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.compliments-header p {
+    font-size: 1.2rem;
+    color: #7a5a64;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.compliments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.compliment-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.compliment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(189, 147, 163, 0.3);
+}
+
+.compliment-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffafbd, #ffc3a0);
+}
+
+.compliment-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.compliment-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+.compliment-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.compliment-card p {
+    font-size: 1.1rem;
+    color: #5a3e4c;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Daily Compliment Section */
+.daily-compliment {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.compliment-box {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.compliment-box::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 C60,5 80,10 85,25 C90,40 80,60 65,65 C50,70 30,60 25,45 C20,30 30,15 50,15 Z" fill="rgba(255,107,157,0.1)"/></svg>');
+    background-size: contain;
+    opacity: 0.3;
+}
+
+.compliment-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.compliment-content {
+    margin-bottom: 25px;
+}
+
+#daily-compliment-text {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #5a3e4c;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    transition: opacity 0.5s;
+}
+
+/* Love Notes Section */
+.love-notes {
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef2 100%);
+    border-radius: 20px;
+    padding: 50px 20px;
+    margin-bottom: 60px;
+    box-shadow: 0 10px 30px rgba(189, 147, 163, 0.2);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+}
+
+.notes-container h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.note-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(189, 147, 163, 0.2);
+    position: relative;
+    border: 1px solid rgba(255, 107, 157, 0.1);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.note-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b9d, #ff8fab);
+}
+
+.note-card p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #5a3e4c;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.note-date {
+    font-weight: 500;
+    color: #ff6b9d;
+    text-align: right;
+    font-size: 1rem;
+}
+
+/* Distance-Themed Enhancements */
+.distance-message {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    border-radius: 15px;
+    margin: 30px 0;
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 107, 157, 0.3);
+}
+
+.distance-message h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.distance-message p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.distance-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.distance-icon {
+    font-size: 2rem;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.distance-icon:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.distance-icon:nth-child(3) {
+    animation-delay: 1s;
+}
+
+/* Long Distance Compliments */
+.long-distance-compliments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.ld-compliment-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(189, 147, 163, 0.25);
+    border: 1px solid rgba(255, 107, 157, 0.15);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.ld-compliment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(189, 147, 163, 0.35);
+}
+
+.ld-compliment-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: #ff6b9d;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.ld-compliment-card p {
+    font-size: 1.1rem;
+    color: #5a3e4c;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.ld-icon {
+    font-size: 2.5rem;
+    color: #ff6b9d;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design for Compliments */
+@media (max-width: 768px) {
+    .compliments-hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .compliments-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .compliments-header h2 {
+        font-size: 2rem;
+    }
+    
+    .compliments-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .compliment-box {
+        padding: 30px 20px;
+    }
+    
+    #daily-compliment-text {
+        font-size: 1.2rem;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .love-notes {
+        padding: 30px 15px;
+    }
+    
+    .distance-message {
+        padding: 20px;
+    }
+    
+    .distance-message h3 {
+        font-size: 1.5rem;
+    }
+    
+    .distance-message p {
+        font-size: 1rem;
+    }
+    
+    .long-distance-compliments {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .compliments-hero {
+        padding: 40px 15px;
+    }
+    
+    .compliments-hero h2 {
+        font-size: 2rem;
+    }
+    
+    .compliment-card {
+        padding: 20px;
+    }
+    
+    .compliment-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .compliment-icon i {
+        font-size: 1.5rem;
+    }
+    
+    .compliment-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    #daily-compliment-text {
+        font-size: 1.1rem;
+    }
+    
+    .distance-icons {
+        gap: 15px;
+    }
+    
+    .ld-compliment-card {
+        padding: 20px;
+    }
+}
+/* Working on it section */
+.working-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    background: linear-gradient(135deg, #fff5f7 0%, #ffeef5 100%);
+    border-radius: 20px;
+    margin: 2rem;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.15);
+}
+
+.working-content {
+    text-align: center;
+    padding: 3rem;
+}
+
+.working-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: #ff69b4;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+}
+
+.working-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    color: #d35f8d;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.heart-loader {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.heart-loader i {
+    font-size: 4rem;
+    color: #ff69b4;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hide actual playlist content */
+.playlist-section,
+.player-section {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .working-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    .working-content {
+        padding: 2rem 1rem;
+    }
+    
+    .working-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .working-content p {
+        font-size: 1rem;
+    }
+    
+    .heart-loader i {
+        font-size: 3rem;
+    }
+}

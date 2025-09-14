@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <h1>Our Love Story</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="playlist.html">Playlist</a></li>
+                    <li><a href="compliments.html">Compliments</a></li>
+                    <li><a href="birthday.html" class="active">Birthday</a></li>
+                    <li><a href="memory-game.html">Memory Game</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Birthday Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="fade-in">Birthday Countdown</h2>
+                <p class="fade-in-delay">Counting down the days until the most special day of the year</p>
+                <div class="heart-animation">
+                    <i class="fas fa-birthday-cake"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="birthday-section">
+            <div class="birthday-container">
+                <div class="birthday-header">
+                    <h2>June 10th - The Day You Became Amazing</h2>
+                    <p>Counting down to your special day</p>
+                </div>
+                
+                <div class="countdown-container">
+                    <div id="countdown" class="countdown">
+                        <div class="countdown-item">
+                            <div id="days" class="countdown-number">00</div>
+                            <div class="countdown-label">Days</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div id="hours" class="countdown-number">00</div>
+                            <div class="countdown-label">Hours</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div id="minutes" class="countdown-number">00</div>
+                            <div class="countdown-label">Minutes</div>
+                        </div>
+                        <div class="countdown-item">
+                            <div id="seconds" class="countdown-number">00</div>
+                            <div class="countdown-label">Seconds</div>
+                        </div>
+                    </div>
+                    
+                    <div id="message" class="birthday-message">
+                        <h3>Happy Birthday My Love!</h3>
+                        <p>Wishing you the most wonderful day filled with love, joy, and all your favorite things.</p>
+                    </div>
+                </div>
+                
+                <div class="birthday-content">
+                    <div class="birthday-image">
+                        <div class="cake-icon">
+                            <i class="fas fa-birthday-cake"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="birthday-text">
+                        <h3>My Dearest,</h3>
+                        <p>As your special day approaches, I wanted to create this little space to count down the moments until I can celebrate you properly. Your birthday is one of the most important days of the year for me because it marks the day the world became brighter with your presence.</p>
+                        <p>I hope this countdown makes the wait as exciting for you as it is for me. Every second brings us closer to celebrating the incredible person you are.</p>
+                        <p>With all my love,</p>
+                        <p class="signature">Your Devoted Partner</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Birthday Wishes -->
+        <section class="birthday-wishes">
+            <div class="wishes-container">
+                <h2>Birthday Wishes</h2>
+                <div class="wishes-grid">
+                    <div class="wish-card">
+                        <i class="fas fa-gift"></i>
+                        <h3>Love & Happiness</h3>
+                        <p>May your birthday be filled with as much joy as you bring to my life every day.</p>
+                    </div>
+                    <div class="wish-card">
+                        <i class="fas fa-star"></i>
+                        <h3>Dreams Come True</h3>
+                        <p>May all your birthday wishes come true and more in the year ahead.</p>
+                    </div>
+                    <div class="wish-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Endless Love</h3>
+                        <p>May you be surrounded by love, laughter, and all your favorite things.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Made with <i class="fas fa-heart"></i> for the most amazing girlfriend in the world</p>
+            </div>
+        </footer>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    function getNextBirthday() {
+        const now = new Date();
+        const birthday = new Date(now.getFullYear(), 5, 10);
+        if (now > birthday) {
+            birthday.setFullYear(birthday.getFullYear() + 1);
+        }
+        return birthday.getTime();
+    }
+    
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+    const countdownEl = document.getElementById('countdown');
+    const messageEl = document.getElementById('message');
+    const wishesSection = document.querySelector('.birthday-wishes');
+    
+    messageEl.style.display = 'none';
+    wishesSection.style.display = 'none';
+    countdownEl.style.display = 'flex';
+    
+    const countdown = setInterval(function() {
+        const now = new Date().getTime();
+        const birthday = getNextBirthday();
+        const distance = birthday - now;
+        
+        if (distance < 0) {
+            clearInterval(countdown);
+            countdownEl.style.display = 'none';
+            messageEl.style.display = 'block';
+            wishesSection.style.display = 'block';
+            return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        daysEl.innerHTML = days.toString().padStart(2, '0');
+        hoursEl.innerHTML = hours.toString().padStart(2, '0');
+        minutesEl.innerHTML = minutes.toString().padStart(2, '0');
+        secondsEl.innerHTML = seconds.toString().padStart(2, '0');
+    }, 1000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Special Playlist</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="  https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css  ">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <h1>Our Love Story</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="playlist.html" class="active">Playlist</a></li>
+                    <li><a href="compliments.html">Compliments</a></li>
+                    <li><a href="birthday.html">Birthday</a></li>
+                    <li><a href="memory-game.html">Memory Game</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Playlist Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="fade-in">Our Special Playlist</h2>
+                <p class="fade-in-delay">Songs that remind me of you and our beautiful moments together</p>
+                <div class="heart-animation">
+                    <i class="fas fa-music"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Working on it message -->
+        <div class="working-container">
+            <div class="working-content">
+                <div class="heart-loader">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2>Working on it</h2>
+                <p>This feature is coming soon with lots of love!</p>
+            </div>
+        </div>
+
+        <!-- Playlist Section -->
+        <section class="playlist-section">
+            <div class="playlist-container">
+                <div class="playlist-header">
+                    <h2>For My Beautiful Girlfriend</h2>
+                    <p>A collection of songs that capture my feelings for you</p>
+                </div>
+                
+                <div class="playlist-controls">
+                    <button id="play-all" class="btn"><i class="fas fa-play"></i> Play All</button>
+                    <button id="shuffle" class="btn"><i class="fas fa-random"></i> Shuffle</button>
+                </div>
+                
+                <div class="playlist">
+                    <!-- Song 1 -->
+                    <div class="song" data-song="1">
+                        <div class="song-info">
+                            <div class="song-number">1</div>
+                            <div class="song-details">
+                                <h3>All of Me</h3>
+                                <p>John Legend</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">4:29</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 2 -->
+                    <div class="song" data-song="2">
+                        <div class="song-info">
+                            <div class="song-number">2</div>
+                            <div class="song-details">
+                                <h3>Perfect</h3>
+                                <p>Ed Sheeran</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">4:23</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 3 -->
+                    <div class="song" data-song="3">
+                        <div class="song-info">
+                            <div class="song-number">3</div>
+                            <div class="song-details">
+                                <h3>Thinking Out Loud</h3>
+                                <p>Ed Sheeran</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">4:41</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 4 -->
+                    <div class="song" data-song="4">
+                        <div class="song-info">
+                            <div class="song-number">4</div>
+                            <div class="song-details">
+                                <h3>A Thousand Years</h3>
+                                <p>Christina Perri</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">4:45</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 5 -->
+                    <div class="song" data-song="5">
+                        <div class="song-info">
+                            <div class="song-number">5</div>
+                            <div class="song-details">
+                                <h3>Can't Help Falling in Love</h3>
+                                <p>Elvis Presley</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">3:00</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 6 -->
+                    <div class="song" data-song="6">
+                        <div class="song-info">
+                            <div class="song-number">6</div>
+                            <div class="song-details">
+                                <h3>At Last</h3>
+                                <p>Etta James</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">3:03</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 7 -->
+                    <div class="song" data-song="7">
+                        <div class="song-info">
+                            <div class="song-number">7</div>
+                            <div class="song-details">
+                                <h3>Unchained Melody</h3>
+                                <p>The Righteous Brothers</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">3:34</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Song 8 -->
+                    <div class="song" data-song="8">
+                        <div class="song-info">
+                            <div class="song-number">8</div>
+                            <div class="song-details">
+                                <h3>Your Song</h3>
+                                <p>Elton John</p>
+                            </div>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                            <div class="song-duration">4:01</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="playlist-message">
+                    <p>Each song reminds me of a special moment with you. I hope they bring a smile to your face and warmth to your heart.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Player Section -->
+        <section class="player-section">
+            <div class="player-container">
+                <div class="player-info">
+                    <div class="current-song">
+                        <h3 id="current-title">Select a song to play</h3>
+                        <p id="current-artist"></p>
+                    </div>
+                    <div class="player-controls">
+                        <button id="prev-btn"><i class="fas fa-step-backward"></i></button>
+                        <button id="play-pause-btn"><i class="fas fa-play"></i></button>
+                        <button id="next-btn"><i class="fas fa-step-forward"></i></button>
+                    </div>
+                    <div class="player-progress">
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="time-info">
+                            <span id="current-time">0:00</span>
+                            <span id="total-time">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Made with <i class="fas fa-heart"></i> for the most amazing girlfriend in the world</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Playlist functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const songs = document.querySelectorAll('.song');
+            const playButtons = document.querySelectorAll('.play-btn');
+            const playAllButton = document.getElementById('play-all');
+            const shuffleButton = document.getElementById('shuffle');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const currentTitle = document.getElementById('current-title');
+            const currentArtist = document.getElementById('current-artist');
+            const currentTimeEl = document.getElementById('current-time');
+            const totalTimeEl = document.getElementById('total-time');
+            const progressBar = document.querySelector('.progress');
+            const progressContainer = document.querySelector('.progress-bar');
+            
+            let currentSongIndex = -1;
+            let isPlaying = false;
+            let progressInterval;
+            
+            // Format time (seconds to mm:ss)
+            function formatTime(seconds) {
+                const mins = Math.floor(seconds / 60);
+                const secs = Math.floor(seconds % 60);
+                return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+            }
+            
+            // Update progress bar
+            function updateProgress() {
+                if (currentSongIndex !== -1) {
+                    const progressPercent = (Math.random() * 100); // Simulate progress
+                    progressBar.style.width = `${progressPercent}%`;
+                    currentTimeEl.textContent = formatTime(progressPercent * 3); // Simulate time
+                }
+            }
+            
+            // Play a song
+            function playSong(index) {
+                currentSongIndex = index;
+                const song = songs[index];
+                const title = song.querySelector('h3').textContent;
+                const artist = song.querySelector('p').textContent;
+                
+                currentTitle.textContent = title;
+                currentArtist.textContent = artist;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                isPlaying = true;
+                
+                // Reset and start progress simulation
+                clearInterval(progressInterval);
+                progressBar.style.width = '0%';
+                progressInterval = setInterval(updateProgress, 1000);
+                
+                // Highlight current song
+                songs.forEach(s => s.classList.remove('playing'));
+                song.classList.add('playing');
+            }
+            
+            // Pause song
+            function pauseSong() {
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                isPlaying = false;
+                clearInterval(progressInterval);
+            }
+            
+            // Play/Pause button
+            playPauseBtn.addEventListener('click', function() {
+                if (currentSongIndex === -1) {
+                    playSong(0);
+                } else {
+                    if (isPlaying) {
+                        pauseSong();
+                    } else {
+                        playSong(currentSongIndex);
+                    }
+                }
+            });
+            
+            // Previous button
+            prevBtn.addEventListener('click', function() {
+                if (currentSongIndex > 0) {
+                    playSong(currentSongIndex - 1);
+                }
+            });
+            
+            // Next button
+            nextBtn.addEventListener('click', function() {
+                if (currentSongIndex < songs.length - 1) {
+                    playSong(currentSongIndex + 1);
+                }
+            });
+            
+            // Individual play buttons
+            playButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    if (currentSongIndex === index && isPlaying) {
+                        pauseSong();
+                    } else {
+                        playSong(index);
+                    }
+                });
+            });
+            
+            // Play all button
+            playAllButton.addEventListener('click', function() {
+                playSong(0);
+            });
+            
+            // Shuffle button
+            shuffleButton.addEventListener('click', function() {
+                // Simple shuffle simulation
+                const randomIndex = Math.floor(Math.random() * songs.length);
+                playSong(randomIndex);
+            });
+            
+            // Progress bar click
+            progressContainer.addEventListener('click', function(e) {
+                if (currentSongIndex !== -1) {
+                    const width = this.clientWidth;
+                    const clickX = e.offsetX;
+                    const progressPercent = (clickX / width) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

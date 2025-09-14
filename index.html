@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Typing Animation Intro -->
+    <div id="intro-overlay" class="intro-overlay">
+        <div class="typing-container">
+            <h1 class="typing-text"></h1>
+            <div class="heart-loader">
+                <div class="heart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <h1>Our Love Story</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="playlist.html">Playlist</a></li>
+                    <li><a href="compliments.html">Compliments</a></li>
+                    <li><a href="birthday.html">Birthday</a></li>
+                    <li><a href="memory-game.html">Memory Game</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="fade-in">To My Beautiful Girlfriend</h2>
+                <p class="fade-in-delay">Every moment with you is a treasure I hold dear to my heart.</p>
+                <div class="heart-animation">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature-card">
+                <i class="fas fa-music icon"></i>
+                <h3>Special Playlist</h3>
+                <p>A collection of songs that remind me of you and our beautiful moments together.</p>
+                <a href="playlist.html" class="btn">Listen Now</a>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-comment-dots icon"></i>
+                <h3>Daily Compliments</h3>
+                <p>Because you deserve to hear how amazing you are every single day.</p>
+                <a href="compliments.html" class="btn">Read More</a>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-birthday-cake icon"></i>
+                <h3>Birthday Countdown</h3>
+                <p>Counting down the days until the most special day of the year.</p>
+                <a href="birthday.html" class="btn">View Countdown</a>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-gamepad icon"></i>
+                <h3>Memory Game</h3>
+                <p>Test your memory with our special card matching game.</p>
+                <a href="memory-game.html" class="btn">Play Now</a>
+            </div>
+        </section>
+
+<!-- Love Letter Section -->
+<section class="love-letter">
+    <div class="letter-content">
+        <h2>My Dearest Love,</h2>
+        <p>Distance may separate our bodies, but it will never separate our hearts. Every mile between us only makes me love you more, and every moment apart makes me cherish the moments we have together even more deeply.</p>
+        <p>Though I can't hold your hand or feel your embrace right now, I carry your love with me everywhere I go. Your voice through the phone lights up my darkest days, and your messages are the sweetest treasures I read again and again.</p>
+        <p>These days apart are teaching me how precious you truly are.You're not just my girlfriend you're my best friend, my dream, my future.</p>
+        <p>I'm counting down the days until I can see your smile in person, until I can hold you close and tell you how much you mean to me face to face. Until then, know that my love for you crosses every boundary and bridges every gap.</p>
+        <p class="signature">Longing for you always,<br>Your Devoted Partner</p>
+    </div>
+</section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Made with <i class="fas fa-heart"></i> for the most amazing girlfriend in the world</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Typing animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const introOverlay = document.getElementById('intro-overlay');
+            const typingText = document.querySelector('.typing-text');
+            const text = "Welcome to our special place...";
+            
+            // Check if user has visited before
+            if (!localStorage.getItem('visited')) {
+                // Show intro animation
+                let i = 0;
+                const typing = setInterval(() => {
+                    if (i < text.length) {
+                        typingText.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(typing);
+                        // Hide intro after delay
+                        setTimeout(() => {
+                            introOverlay.style.opacity = '0';
+                            setTimeout(() => {
+                                introOverlay.style.display = 'none';
+                            }, 1000);
+                        }, 2000);
+                    }
+                }, 100);
+                
+                // Set visited flag
+                localStorage.setItem('visited', 'true');
+            } else {
+                // Hide intro immediately for returning visitors
+                introOverlay.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
