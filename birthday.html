@@ -125,10 +125,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     function getNextBirthday() {
         const now = new Date();
-        const birthday = new Date(now.getFullYear(), 5, 10);
+        const birthday = new Date(now.getFullYear(), 5, 10); // June 10th (month is 0-indexed)
+        
+        // If birthday has passed this year, set to next year
         if (now > birthday) {
             birthday.setFullYear(birthday.getFullYear() + 1);
         }
+        
         return birthday.getTime();
     }
     
@@ -144,7 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
     wishesSection.style.display = 'none';
     countdownEl.style.display = 'flex';
     
-    const countdown = setInterval(function() {
+    // Update immediately and then every second
+    updateCountdown();
+    const countdown = setInterval(updateCountdown, 1000);
+    
+    function updateCountdown() {
         const now = new Date().getTime();
         const birthday = getNextBirthday();
         const distance = birthday - now;
@@ -166,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hoursEl.innerHTML = hours.toString().padStart(2, '0');
         minutesEl.innerHTML = minutes.toString().padStart(2, '0');
         secondsEl.innerHTML = seconds.toString().padStart(2, '0');
-    }, 1000);
+    }
 });
 </script>
 </body>
